@@ -3,7 +3,7 @@
 using namespace std;
 float f(float x)
 {
-    return (x*log10(x))-1.2;
+    return ((x*log10(x))-1.2);
 }
 float bisection(float a,float b,float tol)
 {

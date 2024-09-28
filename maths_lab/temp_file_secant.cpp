@@ -10,9 +10,9 @@ double f(double x) {
 // Secant Method to find the root
 double secantMethod(double x0, double x1, double tol, int maxIter) {
     double x2;
-    int iter = 0;
+    int iter = 1;
 
-    while (iter < maxIter) {
+    while (iter <= maxIter) {
         double f0 = f(x0);
         double f1 = f(x1);
 
@@ -27,11 +27,12 @@ double secantMethod(double x0, double x1, double tol, int maxIter) {
         // Update values
         x0 = x1;
         x1 = x2;
+        cout<<"Value of x for ITERATION "<<iter<<": x = "<<x2<<endl;
         iter++;
     }
 
     // Return the result after maximum iterations if not converged
-    cerr << "Secant Method did not converge within the maximum number of iterations.\n";
+    cout << "Secant Method did not converge within the maximum number of iterations.\n";
     return x2;
 }
 
@@ -39,8 +40,9 @@ int main() {
     double x0 = 2.5;      // Initial guess 1
     double x1 = 2.740646;      // Initial guess 2
     double tol = 1e-6;    // Tolerance
-    int maxIter = 100;    // Maximum number of iterations
-
+    int maxIter ;    // Maximum number of iterations
+    cout<<"Enter the no. of iterations: ";
+    cin>>maxIter;
     double root = secantMethod(x0, x1, tol, maxIter);
 
     cout << fixed << setprecision(6);
