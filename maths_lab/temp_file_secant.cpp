@@ -2,22 +2,26 @@
 #include <cmath>
 #include <iomanip>
 using namespace std;
-// Define the function f(x) = x * log10(x) - 1.2
+
+// Define the function f(x) = ((2 * x) - (log10(x)) - 7)
 double f(double x) {
-    return x * log10(x) - 1.2;
+    return ((2 * x) - (log10(x)) - 7);
 }
 
 // Secant Method to find the root
 double secantMethod(double x0, double x1, double tol, int maxIter) {
     double x2;
-    int iter = 1;
+    int iter = 0;
 
-    while (iter <= maxIter) {
+    while (iter < maxIter) {
         double f0 = f(x0);
         double f1 = f(x1);
 
         // Secant formula
         x2 = x1 - f1 * (x1 - x0) / (f1 - f0);
+
+        // Display the value of x with the current iteration number
+        cout << "x" << iter << " = " << x2 << endl;
 
         // Check if the result is within the tolerance
         if (fabs(f(x2)) < tol || fabs(x2 - x1) < tol) {
@@ -27,7 +31,7 @@ double secantMethod(double x0, double x1, double tol, int maxIter) {
         // Update values
         x0 = x1;
         x1 = x2;
-        cout<<"Value of x for ITERATION "<<iter<<": x = "<<x2<<endl;
+
         iter++;
     }
 
@@ -37,14 +41,15 @@ double secantMethod(double x0, double x1, double tol, int maxIter) {
 }
 
 int main() {
-    double x0 = 2.5;      // Initial guess 1
-    double x1 = 2.740646;      // Initial guess 2
-    double tol = 1e-6;    // Tolerance
-    int maxIter ;    // Maximum number of iterations
-    cout<<"Enter the no. of iterations: ";
-    cin>>maxIter;
+    double x0 = 2.5;        // Initial guess 1
+    double x1 = 2.740646;   // Initial guess 2
+    double tol = 1e-6;      // Tolerance
+    int maxIter = 100;      // Predefined maximum number of iterations
+
+    // Call the secant method
     double root = secantMethod(x0, x1, tol, maxIter);
 
+    // Display the root with 6 decimal places
     cout << fixed << setprecision(6);
     cout << "Root: " << root << endl;
 
