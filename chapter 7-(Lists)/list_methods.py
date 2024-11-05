@@ -1,5 +1,7 @@
 li=[52,55,2,1,3,7]
 print(li)
+li.pop(0)
+print(li)
 li.append(90)
 print(li)
 li.sort(reverse=True)

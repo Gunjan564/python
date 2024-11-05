@@ -14,3 +14,5 @@ for n in range(1,5):#consider only 1-4. Does not consider 5
     print(n)
 for n in range(1,50,5):#consider numbers from 1 to 49 but the difference will be 5
     print(n)
+for i in range(12):
+    pass #pass is a null statement in python. it instructs to "do nothing"

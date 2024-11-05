@@ -8,8 +8,9 @@ print(weapon[4:5])#output=       n
 print(weapon[:6])#output=        Katana
 print(weapon[0:-2])#output=      Kata
 print(weapon[:-2])#output=       Kata
-print(weapon[-1:len(weapon)-2])
+print(weapon[-3:len(weapon)-2])#output   a
 print(weapon[-6:-2])
+
 if "at" in weapon:
     print("Yes")
 else:

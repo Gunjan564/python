@@ -1,9 +1,9 @@
 a=1 #int 
 b=45.63 #float
 c="16 april" #string
-d='vinay' #char
+d='vinay' #string
 f=True
-print(a,b,c,d,sep="==",end=" ending \n")
+print(a,b,c,d,end=" ending \n",sep="==")
 print("The type of a: ",type(a))
 print("The type of b: ",type(b))
 print("The type of c: ",type(c))
@@ -11,8 +11,8 @@ print("The type of d: ",type(d))
 print("The type of f: ",type(f))
 # sep=" " will print the value  between each term that is
 # pressent in print function
-# sep=" " will print the value  between each term that is pressent in print function
-e="hello!\ how are \"YOU\" doin"  #escape sequence        
+# end=" " will print the value at the end
+e="hello!\ how are \"YOU \" doin"  #escape sequence        
 print(e) 
 '''
 Difference between tuple and list:- 
