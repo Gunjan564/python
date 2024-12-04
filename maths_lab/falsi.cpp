@@ -56,6 +56,5 @@ int main() {
     if (root != -1) {
         cout << "The root of the equation is approximately: " << root << endl;
     }
-
     return 0;
 }
